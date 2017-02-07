@@ -1,0 +1,30 @@
+
+<div class="container">
+
+  <main>
+
+<h3>User:</h3>
+
+<p>
+  Name: {{ user.name }}
+  <br>
+  Address: {{ user.address }}
+  <br>
+  Phone: {{ user.phone }}
+  <br>
+</p>
+<h1>Routes through stop {{ user.stop }}</h1>
+<ul>
+  <li *ngFor="let route of routes">
+    <span (click)="showBus(route.route.gtfsId)">{{ route.name | parenthesis}}</span>
+  </li>
+</ul>
+
+    </main>
+
+
+  <div class = "map">
+    <h4>Time: {{ time | date:'d MMMM y HH:mm'}} </h4>
+<iframe width="50%" height="500" [src]="url | safe"></iframe>
+  </div>
+</div>
